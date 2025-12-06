@@ -116,10 +116,10 @@ export const Categories = () => {
               data={categories}
               renderRow={(category) => (
                 <>
-                  <td className="border px-6 py-4 font-semibold text-gray-800">{category.name}</td>
-                  <td className="border px-6 py-4 text-gray-600">{category.description || '-'}</td>
-                  <td className="border px-6 py-4 text-gray-600">{category.products?.length || 0}</td>
-                  <td className="border px-6 py-4 flex space-x-2">
+                  <td className="px-6 py-4 font-semibold text-gray-800">{category.name}</td>
+                  <td className="px-6 py-4 text-gray-600">{category.description || '-'}</td>
+                  <td className="px-6 py-4 text-gray-600">{category.products?.length || 0}</td>
+                  <td className="px-6 py-4 flex space-x-2\">
                     <Button
                       variant="secondary"
                       size="sm"

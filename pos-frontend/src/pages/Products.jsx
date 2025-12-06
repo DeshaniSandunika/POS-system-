@@ -143,11 +143,11 @@ export const Products = () => {
             data={products}
             renderRow={(product) => (
               <>
-                <td className="border px-6 py-4 font-semibold text-gray-800">{product.name}</td>
-                <td className="border px-6 py-4 text-gray-600">{product.category?.name}</td>
-                <td className="border px-6 py-4 font-semibold text-green-600">${product.price.toFixed(2)}</td>
-                <td className="border px-6 py-4 text-gray-600">{product.quantity}</td>
-                <td className="border px-6 py-4 flex space-x-2">
+                <td className="px-6 py-4 font-semibold text-gray-800">{product.name}</td>
+                <td className="px-6 py-4 text-gray-600">{product.category?.name}</td>
+                <td className="px-6 py-4 font-semibold text-green-600">Rs. {product.price.toFixed(2)}</td>
+                <td className="px-6 py-4 text-gray-600">{product.quantity}</td>
+                <td className="px-6 py-4 flex space-x-2">
                   <Button
                     variant="secondary"
                     size="sm"

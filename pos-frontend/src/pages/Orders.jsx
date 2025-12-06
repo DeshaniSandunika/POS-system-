@@ -148,14 +148,14 @@ export const Orders = () => {
             data={orders}
             renderRow={(order) => (
               <>
-                <td className="border px-6 py-4 font-semibold text-gray-800">{order.orderNumber}</td>
+                <td className="px-6 py-4 font-semibold text-gray-800">{order.orderNumber}</td>
                 <td className="border px-6 py-4 text-gray-600">
                   {new Date(order.createdAt).toLocaleDateString()}
                 </td>
-                <td className="border px-6 py-4 font-semibold text-green-600">
-                  ${order.totalAmount.toFixed(2)}
+                <td className="px-6 py-4 font-semibold text-green-600">
+                  Rs. {order.totalAmount.toFixed(2)}
                 </td>
-                <td className="border px-6 py-4">
+                <td className="px-6 py-4">
                   <span
                     className={`px-3 py-1 rounded-full text-xs font-semibold ${
                       order.status === 'pending'
@@ -168,8 +168,8 @@ export const Orders = () => {
                     {order.status}
                   </span>
                 </td>
-                <td className="border px-6 py-4 text-gray-600">{order.items?.length || 0}</td>
-                <td className="border px-6 py-4 flex space-x-2">
+                <td className="px-6 py-4 text-gray-600">{order.items?.length || 0}</td>
+                <td className="px-6 py-4 flex space-x-2">
                   <Button
                     variant="secondary"
                     size="sm"
@@ -220,7 +220,7 @@ export const Orders = () => {
                 onChange={(e) => setFormData({ ...formData, productId: e.target.value })}
                 options={products.map((p) => ({
                   value: p.id,
-                  label: `${p.name} - $${p.price.toFixed(2)} (${p.quantity} in stock)`,
+                  label: `${p.name} - Rs. ${p.price.toFixed(2)} (${p.quantity} in stock)`,
                 }))}
               />
 
@@ -253,7 +253,7 @@ export const Orders = () => {
                     <div className="flex-1">
                       <p className="font-semibold text-gray-800">{item.product.name}</p>
                       <p className="text-sm text-gray-600">
-                        {item.quantity} x ${item.product.price.toFixed(2)} = $
+                        {item.quantity} x Rs. {item.product.price.toFixed(2)} = Rs. 
                         {(item.quantity * item.product.price).toFixed(2)}
                       </p>
                     </div>
@@ -275,7 +275,7 @@ export const Orders = () => {
               <div className="flex justify-between items-center">
                 <span className="font-semibold text-gray-800">Total:</span>
                 <span className="text-2xl font-bold text-green-600">
-                  ${calculateTotal().toFixed(2)}
+                  Rs. {calculateTotal().toFixed(2)}
                 </span>
               </div>
             </div>
@@ -331,7 +331,7 @@ export const Orders = () => {
               <div>
                 <p className="text-gray-600 text-sm">Total Amount</p>
                 <p className="font-semibold text-green-600">
-                  ${selectedOrder.totalAmount.toFixed(2)}
+                  Rs. {selectedOrder.totalAmount.toFixed(2)}
                 </p>
               </div>
             </div>
@@ -344,10 +344,10 @@ export const Orders = () => {
                     <div>
                       <p className="font-semibold">{item.product?.name}</p>
                       <p className="text-sm text-gray-600">
-                        {item.quantity} x ${item.price.toFixed(2)}
+                        {item.quantity} x Rs. {item.price.toFixed(2)}
                       </p>
                     </div>
-                    <p className="font-semibold">${(item.quantity * item.price).toFixed(2)}</p>
+                    <p className="font-semibold">Rs. {(item.quantity * item.price).toFixed(2)}</p>
                   </div>
                 ))}
               </div>
