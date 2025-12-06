@@ -1,0 +1,27 @@
+{
+  "name": "pos-backend",
+  "version": "1.0.0",
+  "description": "Point of Sale Backend System",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/index.js",
+    "start": "node src/index.js",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio"
+  },
+  "keywords": ["pos", "point-of-sale"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.7.0",
+    "prisma": "^5.7.0",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.3.1",
+    "express-validator": "^7.0.0",
+    "cors": "^2.8.5"
+  }
+}
